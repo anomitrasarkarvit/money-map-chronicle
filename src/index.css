@@ -8,67 +8,63 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* Financial App Color Palette */
-    --background: 248 250 252;
-    --foreground: 203 24% 9%;
+    /* Portfolio Green-Blue Theme */
+    --background: 248 252 255;
+    --foreground: 15 23% 15%;
 
     --card: 0 0% 100%;
-    --card-foreground: 203 24% 9%;
+    --card-foreground: 15 23% 15%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 203 24% 9%;
+    --popover-foreground: 15 23% 15%;
 
-    /* Financial Green Primary */
-    --primary: 142 76% 36%;
+    /* Green-Blue Primary Palette */
+    --primary: 178 68% 45%;
     --primary-foreground: 0 0% 98%;
-    --primary-hover: 142 76% 32%;
+    --primary-hover: 178 68% 40%;
+    --primary-light: 178 68% 85%;
 
-    /* Professional Secondary */
-    --secondary: 214 32% 91%;
-    --secondary-foreground: 203 24% 9%;
+    /* Sophisticated Secondary */
+    --secondary: 210 40% 95%;
+    --secondary-foreground: 15 23% 15%;
 
-    --muted: 220 14% 96%;
-    --muted-foreground: 215 16% 47%;
+    --muted: 215 25% 97%;
+    --muted-foreground: 215 15% 45%;
 
-    --accent: 142 76% 36%;
+    --accent: 178 68% 45%;
     --accent-foreground: 0 0% 98%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 220 13% 91%;
-    --input: 220 13% 91%;
-    --ring: 142 76% 36%;
+    --border: 215 20% 92%;
+    --input: 215 20% 92%;
+    --ring: 178 68% 45%;
 
-    /* Financial App Specific Colors */
-    --success: 142 76% 36%;
+    /* Portfolio Specific Colors */
+    --success: 154 75% 50%;
     --success-foreground: 0 0% 98%;
     --warning: 38 92% 50%;
     --warning-foreground: 0 0% 98%;
-    --info: 214 100% 59%;
+    --info: 210 98% 65%;
     --info-foreground: 0 0% 98%;
 
-    /* Expense Categories */
-    --category-food: 25 95% 53%;
-    --category-transport: 214 100% 59%;
-    --category-shopping: 280 100% 70%;
-    --category-entertainment: 339 81% 62%;
-    --category-bills: 16 25% 38%;
-    --category-health: 142 76% 36%;
+    /* Hero Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(178 68% 45%) 0%, hsl(210 98% 65%) 50%, hsl(154 75% 50%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(0 0% 100% / 0.9), hsl(215 25% 97% / 0.8));
+    --gradient-primary: linear-gradient(135deg, hsl(178 68% 45%), hsl(178 68% 55%));
+    --gradient-glass: linear-gradient(135deg, hsl(0 0% 100% / 0.1), hsl(0 0% 100% / 0.05));
 
-    /* Gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(142 76% 36%), hsl(142 76% 45%));
-    --gradient-card: linear-gradient(145deg, hsl(0 0% 100%), hsl(220 14% 98%));
-    --gradient-success: linear-gradient(135deg, hsl(142 76% 36%), hsl(154 85% 44%));
-
-    /* Shadows */
+    /* Advanced Shadows */
     --shadow-card: 0 1px 3px 0 hsl(0 0% 0% / 0.1), 0 1px 2px -1px hsl(0 0% 0% / 0.1);
     --shadow-elevated: 0 10px 15px -3px hsl(0 0% 0% / 0.1), 0 4px 6px -4px hsl(0 0% 0% / 0.1);
-    --shadow-financial: 0 4px 14px 0 hsl(142 76% 36% / 0.15);
+    --shadow-hero: 0 25px 50px -12px hsl(178 68% 45% / 0.25);
+    --shadow-glow: 0 0 50px hsl(178 68% 45% / 0.3);
 
-    /* Transitions */
+    /* Smooth Transitions */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    --transition-spring: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    --transition-spring: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    --transition-bounce: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 
     --radius: 0.5rem;
 
@@ -139,46 +135,26 @@ All colors MUST be HSL.
 }
 
 @layer components {
-  /* Financial Card Components */
-  .financial-card {
-    @apply bg-card rounded-xl border shadow-[var(--shadow-card)] transition-[var(--transition-smooth)];
+  /* Portfolio Card Components */
+  .portfolio-card {
+    @apply bg-card rounded-2xl border shadow-[var(--shadow-card)] backdrop-blur-sm transition-[var(--transition-smooth)];
   }
 
-  .financial-card-elevated {
-    @apply bg-card rounded-xl border shadow-[var(--shadow-elevated)] transition-[var(--transition-smooth)];
+  .portfolio-card-elevated {
+    @apply bg-card rounded-2xl border shadow-[var(--shadow-elevated)] backdrop-blur-sm transition-[var(--transition-spring)] hover:shadow-[var(--shadow-hero)];
   }
 
-  .expense-category-food {
-    @apply text-white;
-    background-color: hsl(var(--category-food));
-  }
-
-  .expense-category-transport {
-    @apply text-white;
-    background-color: hsl(var(--category-transport));
-  }
-
-  .expense-category-shopping {
-    @apply text-white;
-    background-color: hsl(var(--category-shopping));
-  }
-
-  .expense-category-entertainment {
-    @apply text-white;
-    background-color: hsl(var(--category-entertainment));
-  }
-
-  .expense-category-bills {
-    @apply text-white;
-    background-color: hsl(var(--category-bills));
-  }
-
-  .expense-category-health {
-    @apply text-white;
-    background-color: hsl(var(--category-health));
+  .hero-card {
+    background: var(--gradient-glass);
+    backdrop-filter: blur(20px);
+    border: 1px solid hsl(0 0% 100% / 0.2);
   }
 
   /* Gradient Backgrounds */
+  .bg-gradient-hero {
+    background: var(--gradient-hero);
+  }
+
   .bg-gradient-primary {
     background: var(--gradient-primary);
   }
@@ -187,8 +163,17 @@ All colors MUST be HSL.
     background: var(--gradient-card);
   }
 
-  .bg-gradient-success {
-    background: var(--gradient-success);
+  .bg-gradient-glass {
+    background: var(--gradient-glass);
+  }
+
+  /* Interactive Elements */
+  .hover-glow {
+    @apply transition-[var(--transition-spring)] hover:shadow-[var(--shadow-glow)];
+  }
+
+  .tech-badge {
+    @apply bg-gradient-glass backdrop-blur-sm border border-white/20 text-white px-3 py-1 rounded-full text-sm font-medium;
   }
 
   /* Animation Classes */
@@ -202,6 +187,14 @@ All colors MUST be HSL.
 
   .animate-scale-in {
     animation: scaleIn 0.2s ease-out;
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-glow {
+    animation: glow 4s ease-in-out infinite alternate;
   }
 }
 
@@ -233,5 +226,23 @@ All colors MUST be HSL.
   to {
     opacity: 1;
     transform: scale(1);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes glow {
+  from {
+    filter: drop-shadow(0 0 20px hsl(178 68% 45% / 0.5));
+  }
+  to {
+    filter: drop-shadow(0 0 40px hsl(178 68% 45% / 0.8));
   }
 }

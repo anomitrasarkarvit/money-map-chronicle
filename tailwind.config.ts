@@ -27,7 +27,8 @@ export default {
 				primary: {
 					DEFAULT: 'hsl(var(--primary))',
 					foreground: 'hsl(var(--primary-foreground))',
-					hover: 'hsl(var(--primary-hover))'
+					hover: 'hsl(var(--primary-hover))',
+					light: 'hsl(var(--primary-light))'
 				},
 				secondary: {
 					DEFAULT: 'hsl(var(--secondary))',
@@ -64,14 +65,6 @@ export default {
 				info: {
 					DEFAULT: 'hsl(var(--info))',
 					foreground: 'hsl(var(--info-foreground))'
-				},
-				category: {
-					food: 'hsl(var(--category-food))',
-					transport: 'hsl(var(--category-transport))',
-					shopping: 'hsl(var(--category-shopping))',
-					entertainment: 'hsl(var(--category-entertainment))',
-					bills: 'hsl(var(--category-bills))',
-					health: 'hsl(var(--category-health))'
 				},
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
