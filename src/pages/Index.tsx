@@ -1,12 +1,27 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import Header from '@/components/Header';
+import WalletCards from '@/components/WalletCards';
+import ExpenseChart from '@/components/ExpenseChart';
+import RecentExpenses from '@/components/RecentExpenses';
+import QuickActions from '@/components/QuickActions';
 
 const Index = () => {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
-      </div>
+    <div className="min-h-screen bg-background">
+      <Header />
+      
+      <main className="container mx-auto px-4 py-6 space-y-6">
+        {/* Quick Summary Cards */}
+        <WalletCards />
+        
+        {/* Charts and Analytics */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          <ExpenseChart />
+          <QuickActions />
+        </div>
+        
+        {/* Recent Expenses */}
+        <RecentExpenses />
+      </main>
     </div>
   );
 };
